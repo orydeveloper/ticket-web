@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Leaderboard</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            color: white;
+            font-family: Arial;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #1f1f1f;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🏆 Leaderboard</h1>
+
+<table>
+    <tr>
+        <th>Uživatel</th>
+        <th>Počet ticketů</th>
+    </tr>
+
+    {% for user, total in leaderboard %}
+    <tr>
+        <td>{{ user }}</td>
+        <td>{{ total }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h1>📜 Historie Ticketů</h1>
+
+<table>
+    <tr>
+        <th>Uživatel</th>
+        <th>Ticket</th>
+        <th>Datum</th>
+    </tr>
+
+    {% for user, ticket, date in history %}
+    <tr>
+        <td>{{ user }}</td>
+        <td>{{ ticket }}</td>
+        <td>{{ date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
